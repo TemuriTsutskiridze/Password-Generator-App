@@ -55,4 +55,248 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+:root {
+  --thumb-position: 50%;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (min-width: 90em) {
+  html {
+    font-size: 80%;
+  }
+}
+
+body {
+  background: linear-gradient(180deg, #14131B 0%, #08070B 100%);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.title {
+  font-size: 1.6em;
+  line-height: 2.1em;
+  color: #817D92;
+}
+
+.password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 34.3em;
+  padding: 1.7em 1.6em;
+  background: #24232C;
+}
+.password .password-txt {
+  font-size: 2.4em;
+  line-height: 1.33em;
+  color: #E6E5EA;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+}
+.password .password-txt-active {
+  color: #E6E5EA;
+}
+.password .password-txt-active {
+  opacity: 1;
+}
+.password .copy-div {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.password .copy-div .copy {
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+.password .copy-div .copy path:hover {
+  fill: #E6E5EA;
+}
+.password .copy-div .copied {
+  font-size: 1.8em;
+  line-height: 1.3em;
+  color: #A4FFAF;
+  display: none;
+}
+.password .copy-div .copied-active {
+  display: block;
+}
+
+.password-generate-board {
+  width: 34.3rem;
+  padding: 1.6em;
+  background: #24232C;
+}
+.password-generate-board .length .length-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-generate-board .length .length-info .length-txt {
+  font-size: 1.6em;
+  line-height: 1.3125em;
+  color: #E6E5EA;
+}
+.password-generate-board .length .length-info .length-num {
+  font-size: 2.4em;
+  line-height: 1.33em;
+  color: #A4FFAF;
+}
+.password-generate-board .length input[type=range] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 31.1rem;
+  height: 0.8rem;
+  background: linear-gradient(to right, #A4FFAF 0%, #A4FFAF var(--thumb-position), #18171F var(--thumb-position), #18171F 100%);
+  margin-top: 1.7rem;
+}
+.password-generate-board .length input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  background: #E6E5EA;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.password-generate-board .length input[type=range]::-webkit-slider-thumb:hover {
+  background: #24232C;
+  border: 2px solid #A4FFAF;
+}
+.password-generate-board .checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3em;
+  margin-top: 4.2em;
+}
+.password-generate-board .checkboxes .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 2.4em;
+}
+.password-generate-board .checkboxes .checkbox input[type=checkbox] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+.password-generate-board .checkboxes .checkbox input[type=checkbox]:checked + .custom-checkbox {
+  background: #A4FFAF;
+  background-image: url(/assets/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+.password-generate-board .checkboxes .checkbox .custom-checkbox {
+  width: 2rem;
+  height: 2rem;
+  background: #24232C;
+  border: 2px solid #E6E5EA;
+}
+.password-generate-board .checkboxes .checkbox label {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  color: #E6E5EA;
+}
+.password-generate-board .error {
+  font-size: 1.5em;
+  line-height: 1em;
+  color: #F64A4A;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: none;
+}
+.password-generate-board .error-active {
+  display: block;
+}
+.password-generate-board .strength {
+  width: 31.1em;
+  padding: 1.4em 1.6em;
+  background: #18171F;
+  margin-top: 3.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-generate-board .strength .strength-txt {
+  color: #817D92;
+  font-size: 1.6em;
+  line-height: 1.3125em;
+}
+.password-generate-board .strength .strength-info {
+  display: flex;
+  gap: 1.55rem;
+  align-items: center;
+}
+.password-generate-board .strength .strength-info .strength-type {
+  font-size: 1.8em;
+  line-height: 1.3em;
+  color: #E6E5EA;
+}
+.password-generate-board .strength .strength-info .strength-bars {
+  display: flex;
+  gap: 0.8rem;
+}
+.password-generate-board .strength .strength-info .strength-bars .bar {
+  width: 1rem;
+  height: 2.8rem;
+  background: #24232C;
+  border: 2px solid #E6E5EA;
+}
+.password-generate-board .strength .strength-info .strength-bars .too-weak {
+  background: #F64A4A;
+  border: none;
+}
+.password-generate-board .strength .strength-info .strength-bars .weak {
+  background: #FB7C58;
+  border: none;
+}
+.password-generate-board .strength .strength-info .strength-bars .medium {
+  background: #F8CD65;
+  border: none;
+}
+.password-generate-board .strength .strength-info .strength-bars .strong {
+  background: #A4FFAF;
+  border: none;
+}
+.password-generate-board .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 1.6em;
+  line-height: 1.3125em;
+  width: 31.1rem;
+  padding: 1.125em 0;
+  background: #A4FFAF;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.password-generate-board .button:hover {
+  background: #24232C;
+  border: 2px solid #A4FFAF;
+  color: #A4FFAF;
+}
+.password-generate-board .button:hover svg path {
+  fill: #A4FFAF;
 }/*# sourceMappingURL=styles.css.map */
