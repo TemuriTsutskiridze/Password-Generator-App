@@ -13,7 +13,7 @@ html {
     }
 
     @media (min-width: 90em) {
-        font-size: 80%;
+        font-size: 73%;
     }
 }
 
@@ -161,7 +161,7 @@ body {
 
                 &:checked + .custom-checkbox {
                     background: $green-neon;
-                    background-image: url(/assets/icon-check.svg);
+                    background-image: url(../../assets/icon-check.svg);
                     background-repeat: no-repeat;
                     background-position: center;
                     border: none;

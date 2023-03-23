@@ -71,7 +71,7 @@ html {
 }
 @media (min-width: 90em) {
   html {
-    font-size: 80%;
+    font-size: 73%;
   }
 }
 
@@ -200,7 +200,7 @@ body {
 }
 .password-generate-board .checkboxes .checkbox input[type=checkbox]:checked + .custom-checkbox {
   background: #A4FFAF;
-  background-image: url(/assets/icon-check.svg);
+  background-image: url(../../assets/icon-check.svg);
   background-repeat: no-repeat;
   background-position: center;
   border: none;
