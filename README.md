@@ -5,4 +5,4 @@
 ## live url - https://temuritsutskiridze.github.io/Password-Generator-App/
 
 
-![Alt Text](./design/preview.jpg);
+![Alt Text](./design/preview.jpg)

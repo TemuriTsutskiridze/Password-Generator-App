@@ -24,7 +24,7 @@ slider.addEventListener("input", (event) => {
 function generatePassword(event) {
     event.preventDefault();
 
-    let passwordCharacters;
+    let passwordCharacters = "";
     let length = slider.value;
     let generatedPassword = "";
     let passwordStrength = 0;
@@ -66,20 +66,18 @@ function generatePassword(event) {
         if (passwordStrength === 1) {
             strengthClass = "too-weak";
             strength_type.textContent = "TOO-WEAK";
-            error.classList.remove("error-active");
         } else if (passwordStrength === 2) {
             strengthClass = "weak";
             strength_type.textContent = "WEAK";
-            error.classList.remove("error-active");
         }else if (passwordStrength === 3) {
             strengthClass = "medium";
             strength_type.textContent = "MEDIUM";
-            error.classList.remove("error-active");
         }else {
             strengthClass = "strong";
             strength_type.textContent = "STRONG";
             error.classList.remove("error-active");
         }
+        error.classList.remove("error-active");
         strength_bars.children[i].classList.add(strengthClass);
     }
     
